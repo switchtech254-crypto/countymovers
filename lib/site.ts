@@ -31,11 +31,11 @@ export const serviceItems = [
     short: "Furniture, fittings and appliance set-up",
     text: "Get comfortable sooner with help setting up your furniture, fittings and appliances.",
   },
-  {
-    title: "Storage Services",
-    short: "Space for your belongings between moves",
-    text: "Need a little space between moves? Ask us about storage options for your belongings.",
-  },
+  // {
+  //   title: "Storage Services",
+  //   short: "Space for your belongings between moves",
+  //   text: "Need a little space between moves? Ask us about storage options for your belongings.",
+  // },
   {
     title: "Furniture Handling",
     short: "Dismantling, wrapping and reassembly",

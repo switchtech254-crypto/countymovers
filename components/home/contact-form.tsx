@@ -92,7 +92,7 @@ export function ContactForm({ services }: { services: string[] }) {
           <span>Email</span>
           <input name="email" type="email" placeholder="Email address" required maxLength={255} autoComplete="email" />
         </label>
-        <label>
+        {/* <label>
           <span>Service type</span>
           <select
             name="service"
@@ -105,7 +105,7 @@ export function ContactForm({ services }: { services: string[] }) {
               <option key={title}>{title}</option>
             ))}
           </select>
-        </label>
+        </label> */}
         <label>
           <span>Moving from</span>
           <input name="from" placeholder="Current location" required maxLength={300} />
