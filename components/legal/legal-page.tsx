@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Brand } from "@/components/brand";
 import { LegalLinks } from "@/components/legal/legal-links";
+import { CurrentYear } from "@/components/home/current-year";
 
 export const LEGAL_UPDATED = "22 October 2026";
 
@@ -28,7 +29,9 @@ export function LegalPage({ title, intro, children }: { title: string; intro: st
       <main className="page-width legal-body">{children}</main>
       <footer className="legal-footer">
         <div className="page-width legal-footer-inner">
-          <span>© {new Date().getFullYear()} County Movers. All rights reserved.</span>
+         <span>
+          © <CurrentYear /> County Movers. All rights reserved.
+        </span>
           <LegalLinks />
         </div>
       </footer>
