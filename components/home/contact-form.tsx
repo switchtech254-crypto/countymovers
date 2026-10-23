@@ -15,7 +15,7 @@ type Status =
   | { kind: "error"; message: string };
 
 /** Client component: form state and submission. Service titles come in as plain strings. */
-export function ContactForm({ services }: { services: string[] }) {
+export function ContactForm() {
   const { service, setService } = useService();
   const [status, setStatus] = useState<Status>({ kind: "idle" });
   const requestId = useRef("");
@@ -64,7 +64,7 @@ export function ContactForm({ services }: { services: string[] }) {
       }}
     >
       <h3>Let’s Plan Your Move</h3>
-      <Button asChild variant="outline" className="mb-6 mt-4">
+      <Button asChild variant="outline" className="quote-alt mb-6 mt-4">
         <Link href="/quotation">
           Plan a detailed quotation <ArrowRight size={16} />
         </Link>
@@ -78,6 +78,14 @@ export function ContactForm({ services }: { services: string[] }) {
         autoComplete="off"
         aria-hidden="true"
       />
+      {service && (
+  <p className="form-enquiry">
+    Enquiring about: <strong>{service}</strong>
+    <button type="button" onClick={() => setService("")} aria-label="Clear selected service">
+      ×
+    </button>
+  </p>
+)}
 
       <div className="form-grid">
         <label>
@@ -88,24 +96,11 @@ export function ContactForm({ services }: { services: string[] }) {
           <span>Phone number</span>
           <input name="phone" type="tel" placeholder="Phone number" required maxLength={30} autoComplete="tel" />
         </label>
-        <label>
-          <span>Email</span>
-          <input name="email" type="email" placeholder="Email address" required maxLength={255} autoComplete="email" />
-        </label>
-        {/* <label>
-          <span>Service type</span>
-          <select
-            name="service"
-            value={service}
-            onChange={(e) => setService(e.target.value)}
-            required
-          >
-            <option value="">Select a service</option>
-            {services.map((title) => (
-              <option key={title}>{title}</option>
-            ))}
-          </select>
-        </label> */}
+        <label className="form-wide">
+  <span>Email</span>
+  <input name="email" type="email" placeholder="Email address" required maxLength={255} autoComplete="email" />
+</label>
+        
         <label>
           <span>Moving from</span>
           <input name="from" placeholder="Current location" required maxLength={300} />

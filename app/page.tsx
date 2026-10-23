@@ -396,7 +396,7 @@ export default function Page() {
           <SectionDivider from="soft" to="paper" variant="curl" />
           <section id="contact" className="section-space">
             <div className="page-width contact-layout">
-              <ContactForm services={services.map((s) => s.title)} />
+              <ContactForm/>
               <div className="contact-details">
                 <p className="eyebrow">Contact Us</p>
                 <h2>

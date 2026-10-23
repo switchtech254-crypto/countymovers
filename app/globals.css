@@ -3693,3 +3693,70 @@ html {
   cursor: progress;
   animation: none;
 }
+
+
+
+.form-enquiry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 999px;
+  background: var(--background);
+  font-size: 12px;
+}
+.form-enquiry button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--secondary);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.form-grid input[type="date"] {
+  min-width: 0;
+  appearance: none; /* stops iOS date fields overflowing */
+}
+
+@media (max-width: 640px) {
+  .quote-form {
+    padding: 24px 18px;
+  }
+  .quote-form > h3 {
+    font-size: 21px;
+    margin-bottom: 16px;
+  }
+  .quote-alt {
+    width: 100%;
+    height: 48px;
+    justify-content: center;
+  }
+  .form-grid {
+    grid-template-columns: 1fr; /* one field per row */
+    gap: 16px;
+  }
+  .form-grid label > span {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .form-grid input,
+  .form-grid textarea {
+    font-size: 16px; /* 16px prevents iOS zooming on focus */
+    padding: 14px;
+    min-height: 52px;
+  }
+  .form-grid textarea {
+    min-height: 120px;
+  }
+  .quote-form > .quote-button {
+    width: 100%;
+    height: 54px;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .form-note {
+    font-size: 12px;
+  }
+}

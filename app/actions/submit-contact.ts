@@ -8,7 +8,7 @@ const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name.").max(100),
   phone: z.string().trim().min(7, "Please enter a valid phone number.").max(30),
   email: z.string().trim().email("Please enter a valid email address.").max(255),
-  service: z.string().trim().min(1, "Please choose a service.").max(150),
+  service: z.string().trim().max(150),
   from: z.string().trim().min(2, "Please tell us where you are moving from.").max(300),
   to: z.string().trim().min(2, "Please tell us where you are moving to.").max(300),
   date: z.string().trim().max(20),
@@ -46,7 +46,7 @@ export async function submitContact(input: {
     ["Name", q.name],
     ["Phone / WhatsApp", q.phone],
     ["Email", q.email],
-    ["Service", q.service],
+    ...(q.service ? ([["Service", q.service]] as [string, string][]) : []),
     ["Moving from", q.from],
     ["Moving to", q.to],
     ["Preferred date", q.date || "—"],
@@ -76,7 +76,7 @@ ${rows
   const alert =
     `📩 NEW ENQUIRY ${reference}\n` +
     `${q.name} · ${q.phone}\n` +
-    `${q.service}\n` +
+    `${q.service ? q.service + "\n" : ""}` +
     `${q.from} → ${q.to}\n` +
     `${q.date || "date TBC"}\n` +
     `${q.email}`;
@@ -85,7 +85,7 @@ ${rows
   const customerText =
     `Hello ${first},\n\n` +
     `Thank you for contacting County Movers. We have received your enquiry and will be in touch shortly.\n\n` +
-    `Reference: ${reference}\nService: ${q.service}\nRoute: ${q.from} → ${q.to}\nPreferred date: ${q.date || "Date to be arranged"}\n\n` +
+    `Reference: ${reference}\nService: ${q.service}\n : ""}Route: ${q.from} → ${q.to}\nPreferred date: ${q.date || "Date to be arranged"}\n\n` +
     `This is an enquiry, not a confirmed booking. Pricing and availability are confirmed after we review your move.\n\n` +
     `Need to add something? Reply to this email or call ${PHONE} and quote your reference.\n\n` +
     `County Movers\nDonholm, Nairobi, Kenya\n`;
@@ -98,7 +98,7 @@ ${rows
 <p style="margin:0 0 18px;line-height:1.6;color:#555b66">Thank you for contacting County Movers. We will review your move and be in touch shortly.</p>
 <table role="presentation" width="100%" style="background:#f4f5f7;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.8">
 <tr><td><strong>Reference:</strong> ${escapeHtml(reference)}</td></tr>
-<tr><td><strong>Service:</strong> ${escapeHtml(q.service)}</td></tr>
+${q.service ? `<tr><td><strong>Service:</strong> ${escapeHtml(q.service)}</td></tr>` : ""}
 <tr><td><strong>Route:</strong> ${escapeHtml(q.from)} → ${escapeHtml(q.to)}</td></tr>
 <tr><td><strong>Preferred date:</strong> ${escapeHtml(q.date || "Date to be arranged")}</td></tr>
 </table>
