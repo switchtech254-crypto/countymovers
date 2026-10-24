@@ -36,19 +36,81 @@ import { ScrollReveal } from "@/components/home/scroll-reveal";
 import { LegalLinks } from "@/components/legal/legal-links";
 import Image from "next/image";
 
+import { SITE_URL } from "@/lib/site"; // add to your existing import from "@/lib/site"
+
 export const metadata: Metadata = {
-  title: "County Movers | Home & Office Moving in Nairobi",
+  title: { absolute: "County Movers | Home & Office Movers in Nairobi, Kenya" },
   description:
-    "Make your next move a smooth one with County Movers in Donholm, Nairobi. Home and office relocation, packing, transport, storage and installation. Request a free quote.",
+    "Professional home and office movers in Donholm, Nairobi. Careful packing, loading, transport, furniture handling and installation. Request a free quote.",
+  keywords: [
+    "movers in Nairobi",
+    "house movers Nairobi",
+    "office relocation Nairobi",
+    "moving company Donholm",
+    "packing and unpacking services Kenya",
+    "furniture moving Nairobi",
+  ],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
+    url: "/",
+    siteName: "County Movers",
+    locale: "en_KE",
     title: "County Movers | A smoother move starts here",
     description:
-      "Careful packing, reliable transport and a fresh start. Discover County Movers' home and office moving services in Nairobi.",
+      "Home and office moving in Nairobi and across Kenya. Careful packing, reliable transport and a team that settles you in. Get a free quote.",
   },
   twitter: {
     card: "summary_large_image",
+    title: "County Movers | Home & Office Movers in Nairobi",
+    description:
+      "Careful packing, reliable transport and a fresh start. Request a free quote from County Movers.",
   },
+};
+
+import { serviceItems } from "@/lib/site"; // add to your existing import
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "County Movers",
+      inLanguage: "en-KE",
+    },
+    {
+      "@type": "MovingCompany",
+      "@id": `${SITE_URL}/#business`,
+      name: "County Movers",
+      url: SITE_URL,
+      image: `${SITE_URL}${IMG.hero}`,
+      logo: `${SITE_URL}${IMG.logo}`,
+      telephone: PHONE,
+      email: EMAIL,
+      description:
+        "Home and office moving company based in Donholm, Nairobi, offering packing, loading, transport, furniture handling and installation.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Donholm, Nairobi",
+        addressRegion: "Nairobi County",
+        addressCountry: "KE",
+      },
+      areaServed: [
+        { "@type": "City", name: "Nairobi" },
+        { "@type": "Country", name: "Kenya" },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Moving services",
+        itemListElement: serviceItems.map((s) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: s.title, description: s.text },
+        })),
+      },
+    },
+  ],
 };
 
 // Structured data so search engines can show the FAQ answers directly.
@@ -71,6 +133,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd).replace(/</g, "\\u003c") }}
       />
       <div className="topbar">
         <div className="page-width topbar-inner">

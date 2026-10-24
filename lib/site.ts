@@ -4,6 +4,8 @@ export const PHONE = "+254 705 440776";
 export const PHONE_LINK = "tel:+254705440776";
 export const WHATSAPP = "https://wa.me/254705440776";
 export const EMAIL = "contact@countymovers.co.ke";
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://countymovers.co.ke").replace(/\/$/, "");
+export const SITE_NAME = "County Movers";
 
 // Images live in /public/images and are referenced by URL.
 export const IMG = {
