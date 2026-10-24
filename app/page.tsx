@@ -170,7 +170,7 @@ export default function Page() {
                
                 <Image
                   className="about-photo-sub"
-                  src={IMG.team}
+                  src={IMG.talktous}
                   alt="Movers loading carefully protected furniture"
                   width={1216}
                   height={832}
@@ -306,7 +306,7 @@ export default function Page() {
                 </div>
               </div>
               <Image
-                src={IMG.about}
+                src={IMG.threestep}
                 alt="A mover ready with packed boxes"
                 loading="lazy"
                 width={832}

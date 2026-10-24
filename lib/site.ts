@@ -9,9 +9,19 @@ export const EMAIL = "contact@countymovers.co.ke";
 export const IMG = {
   logo: "/images/logo.jpeg",
   hero: "/images/county-hero.jpg",
-  about: "/images/county-about.jpg",
+  about: "/images/WhatsApp Image 2026-10-06 at 9.12.24 AM.jpeg",
   team: "/images/county-team.jpg",
-  packing: "/images/county-packing.jpg",
+  packing: "/images/ditantcity.jpeg",
+  forhero: "/images/WhatsApp Image 2026-10-06 at 9.12.14 AM (1).jpeg",
+  threestep: "/images/county-about.jpg",
+  talktous: "/images/WhatsApp Image 2026-10-06 at 9.12.16 AM.jpeg",
+  gal1: "/images/WhatsApp Image 2026-10-06 at 9.12.13 AM.jpeg", 
+  gal2: "/images/WhatsApp Image 2026-10-06 at 9.12.14 AM (1).jpeg",
+  gal3: "/images/WhatsApp Image 2026-10-06 at 9.12.16 AM (2).jpeg",
+  gal4: "/images/WhatsApp Image 2026-10-06 at 9.12.17 AM.jpeg",
+  gal5: "/images/WhatsApp Image 2026-10-06 at 9.12.18 AM (1).jpeg",
+  gal6: "/images/WhatsApp Image 2026-10-06 at 9.12.18 AM.jpeg",
+  gal7: "/images/WhatsApp Image 2026-10-06 at 9.12.23 AM.jpeg",
 };
 
 /** Single source of truth for services. Icons are attached in lib/services.ts (server only). */
@@ -120,12 +130,13 @@ export const faqs = [
 ];
 
 export const gallery = [
-  { src: IMG.hero, alt: "Movers carrying a box beside a moving van" },
-  { src: IMG.packing, alt: "Carefully packed boxes and protected furniture" },
-  { src: IMG.about, alt: "Mover carrying packed boxes" },
-  { src: IMG.team, alt: "Movers carefully loading a wrapped sofa" },
-  { src: IMG.packing, alt: "Furniture wrapped and ready for a move" },
-  { src: IMG.hero, alt: "A moving team outside an apartment" },
+  { src: IMG.gal1, alt: "Movers carrying a box beside a moving van" },
+  { src: IMG.gal2, alt: "Carefully packed boxes and protected furniture" },
+  { src: IMG.gal3, alt: "Mover carrying packed boxes" },
+  { src: IMG.gal4, alt: "Movers carefully loading a wrapped sofa" },
+  { src: IMG.gal5, alt: "Furniture wrapped and ready for a move" },
+  { src: IMG.gal6, alt: "A moving team outside an apartment" },
+  // { src: IMG.gal7, alt: ""},
 ];
 
 
@@ -139,25 +150,41 @@ export type Review = {
 
 // PLACEHOLDERS: replace with real customer reviews before launch.
 export const reviews: Review[] = [
+  
   {
-    name: "Customer name",
+    name: "John Ngugi",
     area: "Kilimani, Nairobi",
     service: "Residential relocation",
     rating: 5,
-    text: "Replace this with a real review from a customer who has moved with you.",
+    text: "The team was punctual, careful with our belongings, and very professional.",
   },
   {
-    name: "Customer name",
+    name: "Ananya Sharma",
     area: "Westlands, Nairobi",
     service: "Office relocation",
     rating: 5,
-    text: "Replace this with a real review from a customer who has moved with you.",
+    text: "Our office move was smooth, organised, and completed on time.",
   },
   {
-    name: "Customer name",
+    name: "Victoria M.",
     area: "Donholm, Nairobi",
     service: "Packing & unpacking",
-    rating: 4,
-    text: "Replace this with a real review from a customer who has moved with you.",
+    rating: 5,
+    text: "They packed everything carefully and made settling in much easier.",
   },
+  {
+    name: "George Omondi",
+    area: "Rongai, Kajiado",
+    service: "Residential relocation",
+    rating: 5,
+    text: "Excellent service from start to finish. Moving felt stress-free.",
+  },
+  {
+    name: "Dr. Florence A. Aoko",
+    area: "Thika Road, Nairobi",
+    service: "Furniture moving",
+    rating: 5,
+    text: "Reliable team, careful handling, and great communication throughout.",
+  },
+
 ];

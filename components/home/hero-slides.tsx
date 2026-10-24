@@ -6,9 +6,10 @@ import Image from "next/image";
 
 const slides = [
   { src: IMG.hero, alt: "Movers carefully carrying a box beside a van in Nairobi" },
-  { src: IMG.team, alt: "Movers carefully loading a wrapped sofa" },
+  { src: IMG.forhero, alt: "Movers carefully loading a wrapped sofa" },
   { src: IMG.packing, alt: "Carefully packed boxes and protected furniture" },
   { src: IMG.about, alt: "A friendly mover carrying packed boxes" },
+
 ];
 
 type HeroTransition = "fade" | "slide" | "zoom";

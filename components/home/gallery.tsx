@@ -51,8 +51,15 @@ export function Gallery() {
             <X />
           </Button>
           {/* <img src={image.src} alt={image.alt} /> */}
-          <Image src={image.src} alt={image.alt} />
-        </div>
+<Image
+  src={image.src}
+  alt={image.alt}
+  width={1600}
+  height={1100}
+  sizes="90vw"
+  className="lightbox-img"
+  priority
+/>        </div>
       )}
     </>
   );
