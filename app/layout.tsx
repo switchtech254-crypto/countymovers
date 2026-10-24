@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   icons: { icon: "/favicon.png", apple: "/favicon.png" },
-  // verification: { google: "paste-your-search-console-token" },
+  verification: { google: "9SmjaSz5516hXUdoSJn6qP85ylq4PI2bsYZA1qkxuCg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
